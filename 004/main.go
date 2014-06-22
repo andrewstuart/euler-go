@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"time"
 )
 
 //String reverser
@@ -27,6 +28,8 @@ func isPalindrome(n int) bool {
 func main() {
 	largest := 0
 
+	t := time.Now()
+
 	for i := 999; i >= 100; i-- {
 		for j := 999; j >= 100; j-- {
 			test := i * j
@@ -36,6 +39,8 @@ func main() {
 			}
 		}
 	}
+
+	fmt.Println(time.Since(t))
 
 	fmt.Println(largest)
 }
