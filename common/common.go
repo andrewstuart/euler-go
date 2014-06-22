@@ -19,13 +19,17 @@ func LCM(m, n int) int {
 }
 
 func IsPrime(n float64) (t bool) {
+	if n == 2 {
+		return true
+	}
+
 	if math.Remainder(n, 2) == 0 {
 		return false
 	}
 
 	i := 3.0
 
-	for ; !t && i < math.Sqrt(n); i += 2 {
+	for ; !t && i <= math.Sqrt(n); i += 2 {
 		//t will become true and the loop will break and we'll return false (!t)
 		t = (math.Remainder(n, i) == 0)
 	}
